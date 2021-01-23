@@ -1,0 +1,27 @@
+name: 'github-action-compress-file'
+description: '压缩前端代码用'
+author: 'sheyenrath'
+branding:
+  icon: 'archive'  
+  color: 'blue'
+inputs:
+  gzip:
+    description: '是否启用gzip'
+    required: false
+  gzipOptions:
+    description: 'gzip参数'
+    required: false
+  brotli:
+    description: '是否启用brotli'
+    required: false
+  brotliOptions:
+    description: 'brotli参数'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.gzip }}
+    - ${{ inputs.extensions }}
+    - ${{ inputs.tools }}
+    - ${{ inputs.depth }}
