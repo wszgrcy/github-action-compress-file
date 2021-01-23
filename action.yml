@@ -19,7 +19,7 @@ inputs:
     required: false
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'dockerfile'
   args:
     - ${{ inputs.gzip }}
     - ${{ inputs.extensions }}
